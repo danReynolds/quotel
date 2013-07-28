@@ -1,8 +1,21 @@
 %html
   %head
-    %title Happs
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Inspiration"
+    %meta{:content => content_for?(:description) ? yield(:description) : "Here", :name => "description"}/
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      .navbar
+        %nav.navbar-inner
+          = render 'layouts/navigation'
+    %main{:role => "main"}
+      .container
+        .content
+          .row
+            .span12
+              = render 'layouts/messages'
+              = yield
+          %footer

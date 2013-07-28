@@ -15,6 +15,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'haml-rails', '0.4'
+gem 'bootstrap-sass'
+gem 'simple_form', '>= 3.0.0.rc'
+gem 'font-awesome-sass-rails', '~> 3.0.0.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

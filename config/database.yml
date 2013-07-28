@@ -17,11 +17,12 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: <%= ENV['HAPPS_DATABASE'] %>
-  username: <%= ENV['HAPPS_USERNAME'] %>
-  password: <%= ENV['HAPPS_PASSWORD'] %>
-  host: <%= ENV['HAPPS_HOST'] %>
-  pool: <%= ENV['HAPPS_PORT'] %>
+  pool: 5
+  database: df7ubb9h00hbg1
+  username: sptnyxrfrudylp
+  password: B-4P_G6zbAOT6rp6HmbJlg5Gd4
+  host: ec2-107-20-165-44.compute-1.amazonaws.com
+  port: 5432
 
 
 
