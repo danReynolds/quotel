@@ -1,7 +1,10 @@
 = javascript_include_tag 'quotes'
 .container.home
   .hero-unit
-    %h1 #{@sample.try(:description)}
+    - if @sample
+      %h1 #{@sample.description}
+    - else
+      %h1 :( Nothing to say.
     .review
       %i.icon-thumbs-up
       %i.icon-thumbs-down
