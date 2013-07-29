@@ -11,7 +11,18 @@
   .row-fluid
     .span12
       .add
-        = link_to new_quote_url(source: @sample.try(:source)) do
-          %i.icon-plus
-            Add your own
+        - if @sample
+          = link_to new_quote_url(source: @sample.source) do
+            %i.icon-plus
+              Add your own
+        - elsif params[:source]
+          = link_to new_quote_url(source: params[:source]) do
+            %i.icon-plus
+              Add your own
+        - else
+          = link_to new_quote_url(source: "flattery") do
+            %i.icon-plus
+              Add your own
+        
+       
   %hr
