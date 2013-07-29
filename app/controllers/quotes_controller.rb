@@ -23,10 +23,9 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
-
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to root_url, notice: 'You just shared your words with people' }
+        format.html { redirect_to root_url(source: @quote.source), notice: 'You just shared your words with people' }
       else
         format.html { render action: 'new' }
         format.json { render json: @quote.errors, status: :unprocessable_entity }

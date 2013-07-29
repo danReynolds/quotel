@@ -1,6 +1,6 @@
 = javascript_include_tag 'quotes'
 .container.home
-  .hero-unit
+  .hero-unit{class: "#{@sample.source}"}
     - if @sample
       %h1 #{@sample.description}
     - else
