@@ -3,9 +3,6 @@ class QuotesController < ApplicationController
 
   # GET /quotes
   # GET /quotes.json
-  def index
-    @quotes = Quote.all
-  end
 
   # GET /quotes/1
   # GET /quotes/1.json
@@ -15,6 +12,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @source = params[:source]
   end
 
   # GET /quotes/1/edit
@@ -28,7 +26,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to root_url, notice: 'Quote was successfully created.' }
+        format.html { redirect_to root_url, notice: 'You just shared your words with people' }
       else
         format.html { render action: 'new' }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
@@ -49,6 +47,40 @@ class QuotesController < ApplicationController
       end
     end
   end
+  
+  def rank
+    quote = Quote.find(params[:id])
+    new_quote = Quote.all.select{|q| q.source == quote.source && q.id != quote.id}.sample
+    
+    if params[:direction] == "up"
+      if quote.up
+        quote.up += 1
+      else
+        quote.up = 1
+      end
+    else
+      if quote.down
+        quote.down += 1
+      else
+        quote.down = 1
+      end
+    end
+    
+    if quote.save
+      respond_to do |format|
+        format.json do
+          result = {
+            new_quote_id: new_quote.id,
+            new_quote_description: new_quote.description
+          }
+          render json: result
+        end
+      end
+    else
+      raise
+    end
+      
+  end
 
   # DELETE /quotes/1
   # DELETE /quotes/1.json
@@ -68,6 +100,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:description)
+      params.require(:quote).permit(:description, :author, :source, :up, :down)
     end
 end

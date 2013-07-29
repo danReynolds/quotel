@@ -1,0 +1,14 @@
+= javascript_include_tag 'quotes'
+.container.home
+  .hero-unit
+    %h1 #{@sample.try(:description)}
+    .review
+      %i.icon-thumbs-up
+      %i.icon-thumbs-down
+  .row-fluid
+    .span12
+      .add
+        = link_to new_quote_url(source: @quotes.first.source) do
+          %i.icon-plus
+            Add your own
+  %hr

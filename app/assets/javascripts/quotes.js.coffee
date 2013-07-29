@@ -1,3 +1,22 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  quote = quote_id
+  $('.icon-thumbs-up').on 'click', (e) ->
+    $.ajax
+      method: "GET"
+      data: {direction: "up", id: quote}
+      url: "/quotes/rank"
+    .done (data) ->
+      quote = data.new_quote_id
+      $('.hero-unit').children().first().text(data.new_quote_description)
+      
+  $('.icon-thumbs-down').on 'click', (e) ->
+    $.ajax
+      method: "GET"
+      data: {direction: "down", id: quote}
+      url: "/quotes/rank"
+    .done (data) ->
+      quote = data.new_quote_id
+      $('.hero-unit').children().first().text(data.new_quote_description)
+    
+    
+  

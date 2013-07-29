@@ -1,3 +1,12 @@
-.featurette {
-  width: 100%
+.add-quote {
+  .heading {
+    margin-top: 48px;
+  }
+  h3 {
+    color: gray;
+  }
+  #quote_description {
+    width: 100%;
+    height: 120px;
+  }
 }

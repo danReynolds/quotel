@@ -1,7 +1,21 @@
 class Quote < ActiveRecord::Base
-  def new
+  
+  FLATTERY = 'flattery'
+  INSULT = 'insult'
+  FLATINSULT = 'flatinsult'
+  
+  TYPES = [FLATTERY, INSULT, FLATINSULT].freeze
+  
+  def flattery?
+    self.source == Quote::FLATTERY
   end
   
-  def create
+  def insult?
+    self.source == Quote::INSULT
   end
+  
+  def flatinsult?
+    self.source == Quote::FLATINSULT
+  end
+  
 end

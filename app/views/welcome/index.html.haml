@@ -1,7 +1,6 @@
-.container
-  .hero-unit
-    %h1 You're fantastic.
-    .review
-      %i.icon-thumbs-up
-      %i.icon-thumbs-down
+:javascript
+  var quote_id = #{@sample.id}
+  
+=render partial: "quote"
+
     
