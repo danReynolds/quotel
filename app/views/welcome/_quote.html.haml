@@ -8,7 +8,7 @@
   .row-fluid
     .span12
       .add
-        = link_to new_quote_url(source: @quotes.first.source) do
+        = link_to new_quote_url(source: @sample.try(:source)) do
           %i.icon-plus
             Add your own
   %hr

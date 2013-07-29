@@ -1,5 +1,5 @@
 :javascript
-  var quote_id = #{@sample.id}
+  var quote_id = #{@sample.try(:id)}
   
 =render partial: "quote"
 
