@@ -1,0 +1,33 @@
+.view_all {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+  .flattery.icon-trophy {
+    font-size: 40px;
+    color: rgba(174, 223, 235, 1);
+  }
+  .insult.icon-trophy {
+    font-size: 40px;
+    color: rgba(107, 253, 107, 1);
+  }
+  .flatinsult.icon-trophy {
+    font-size: 40px;
+    color: rgba(235, 174, 215, 1);
+  }
+
+  .winner {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+    h3 {
+      color: gray;
+      font-size: 16px;
+      margin: 0
+    }
+  }
+  
+  hr {
+    border-bottom: 1px solid rgba(200, 211, 210, 0.5);
+  }
+}

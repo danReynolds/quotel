@@ -8,6 +8,7 @@ Happs::Application.routes.draw do
   resources :quotes do
     collection do
       get :rank
+      get :view_all
     end
   end
 

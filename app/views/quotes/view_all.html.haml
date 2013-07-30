@@ -1,0 +1,9 @@
+.container-fluid.view_all
+  - @week_winners.each do |winner|
+    .row-fluid.winner
+      .span12
+        %i.icon-trophy{class: "#{winner.source}"}
+        %h1 #{winner.source.capitalize} of the week
+        %h3 #{winner.description}
+    %hr
+  

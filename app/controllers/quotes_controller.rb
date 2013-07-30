@@ -47,6 +47,11 @@ class QuotesController < ApplicationController
     end
   end
   
+  def view_all
+    @quotes = Quote.all.order('up DESC')
+    @week_winners = [@quotes.select{|q| q.source == Quote::FLATTERY}.first, @quotes.select{|q| q.source == Quote::INSULT}.first, @quotes.select{|q| q.source == Quote::FLATINSULT}.first]
+  end
+  
   def rank
     quote = Quote.find(params[:id])
     new_quote = Quote.all.select{|q| q.source == quote.source && q.id != quote.id}.sample
