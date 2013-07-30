@@ -6,4 +6,15 @@
         %h1 #{winner.source.capitalize} of the week
         %h3 #{winner.description}
     %hr
+  %section.all_quotes
+    - @all_quotes.each do |quote|
+      .row-fluid.each_quote
+        .span12
+          %i.icon-quote-left{class: "#{quote.source}"}
+          #{quote.description}
+          %i.icon-quote-right{class: "#{quote.source}"}
+          - if quote.author.present?
+            %p - #{quote.author}
+          - else
+            %p.author - Anonymous
   

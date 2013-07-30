@@ -48,8 +48,9 @@ class QuotesController < ApplicationController
   end
   
   def view_all
-    @quotes = Quote.all.order('up DESC')
-    @week_winners = [@quotes.select{|q| q.source == Quote::FLATTERY}.first, @quotes.select{|q| q.source == Quote::INSULT}.first, @quotes.select{|q| q.source == Quote::FLATINSULT}.first]
+    @all_quotes = Quote.all.order('up DESC')
+    @recent_quotes = @all_quotes.select{|q| q.created_at.to_date >= Date.today - 7.days}
+    @week_winners = [@recent_quotes.select{|q| q.source == Quote::FLATTERY}.first, @recent_quotes.select{|q| q.source == Quote::INSULT}.first, @recent_quotes.select{|q| q.source == Quote::FLATINSULT}.first]
   end
   
   def rank

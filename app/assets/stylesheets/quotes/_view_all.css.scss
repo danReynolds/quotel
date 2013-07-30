@@ -2,32 +2,49 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  
-  .flattery.icon-trophy {
-    font-size: 40px;
-    color: rgba(174, 223, 235, 1);
-  }
-  .insult.icon-trophy {
-    font-size: 40px;
-    color: rgba(107, 253, 107, 1);
-  }
-  .flatinsult.icon-trophy {
-    font-size: 40px;
-    color: rgba(235, 174, 215, 1);
-  }
 
   .winner {
     margin-top: 25px;
     margin-bottom: 25px;
-    
+
+    .flattery.icon-trophy {
+      font-size: 70px;
+      color: rgba(174, 223, 235, 1);
+    }
+    .insult.icon-trophy {
+      font-size: 70px;
+      color: rgba(107, 253, 107, 1);
+    }
+    .flatinsult.icon-trophy {
+      font-size: 70px;
+      color: rgba(235, 174, 215, 1);
+    }
     h3 {
+      margin-top: 20px;
       color: gray;
-      font-size: 16px;
-      margin: 0
+      font-size: 30px;
+    }
+    h1 {
+      font-size: 50px;
     }
   }
+  hr {border-bottom: 1px solid rgba(200, 211, 210, 0.5);}
   
-  hr {
-    border-bottom: 1px solid rgba(200, 211, 210, 0.5);
+  .all_quotes {
+    margin-top: 20px;
+ 
+    .each_quote {
+      margin-top: 80px;
+      margin-bottom: 80px;
+      font-size: 40px;
+      p {font-size: 20px;}
+      .icon-quote-left.flattery {color: rgba(174, 223, 235, 1);}
+      .icon-quote-right.flattery {color: rgba(174, 223, 235, 1);}
+      .icon-quote-left.insult {color: rgba(107, 253, 107, 1);}
+      .icon-quote-right.insult {color: rgba(107, 253, 107, 1);}
+      .icon-quote-left.flatinsult {color: rgba(235, 174, 215, 1);}
+      .icon-quote-right.flatinsult {color: rgba(235, 174, 215, 1);}
+    }
   }
+  .author {margin-top: 10px;}
 }
