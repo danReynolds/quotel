@@ -6,5 +6,6 @@ class WelcomeController < ApplicationController
       @quotes = Quote.where(source: Quote::FLATTERY)
     end
     @sample = @quotes.sample
+    @week_winner = @quotes.order('up DESC').first
   end
 end

@@ -1,12 +1,18 @@
 .site-navigation
-  %ul.nav.navbar
-    %li.flattery
-      = link_to "Flattery", root_url(source: Quote::FLATTERY)
-    %li.insult
-      = link_to "Insult", root_url(source: Quote::INSULT)
-    %li.flatinsult
-      = link_to "FlatInsult", root_url(source: Quote::FLATINSULT)
-    %li.about
-      = link_to "About", new_quote_path
+  .row-fluid.banner
+    .span12
+      :plain
+        <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  .navbar
+    %nav.navbar-inner
+      %ul.nav.navbar
+        %li.flattery
+          = link_to "Flattery", root_url(source: Quote::FLATTERY)
+        %li.insult
+          = link_to "Insult", root_url(source: Quote::INSULT)
+        %li.flatinsult
+          = link_to "FlatInsult", root_url(source: Quote::FLATINSULT)
+        %li.about
+          = link_to "About", new_quote_path
   
   
