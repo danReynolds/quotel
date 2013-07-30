@@ -1,8 +1,14 @@
 .site-navigation
   .row-fluid.banner
-    .span12
-      :plain
-        <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+    .span11
+      .twshare{:style => 'margin-right: -50px;'}
+        %a.twitter-share-button.left{"data-count" => "horizontal", "data-via" => "fuonrails", :href => "http://twitter.com/share"} Tweet
+        %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+    .span1
+      .fshare{:style => 'padding-left: 0px; margin-left: -5px;'}
+        %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
+        %fb:like{:layout => "button_count", :show_faces => "false", :width => "450"}
+      .CLR 
   .navbar
     %nav.navbar-inner
       %ul.nav.navbar
