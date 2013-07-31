@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 body { 
-  padding-top: 40px;
+  padding-top: 20px;
   background-image: image-url("background.png")
 }
 .navbar-inner {
@@ -15,5 +15,11 @@ input[type=text] {
 }
 a:hover {
   text-decoration:none;
+}
+.logo {
+  background-size: 100% auto;
+  background-position: center center;
+  display: block;
+  background: url('logo-small.png'), no-repeat;
 }
 @import "bootstrap-responsive";
