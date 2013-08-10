@@ -1,17 +1,31 @@
-= javascript_include_tag 'quotes'
+- content_for(:head) do
+  = javascript_include_tag 'quotes'
+  = javascript_include_tag 'profil/elementTransitions'
 
 :javascript
   var quote_id = #{@sample.try(:id)}
   
 .container.home
-  .hero-unit{class: "#{@sample.source}"}
-    - if @sample
-      %h1 #{@sample.description}
-    - else
-      %h1 :( Nothing to say.
-    .review
-      %i.icon-thumbs-up
-      %i.icon-thumbs-down
+  .et-wrapper
+    .et-page
+      .hero-unit{class: "#{@sample.source}"}
+        - if @sample
+          %h1 #{@sample.description}
+        - else
+          %h1 :( Nothing to say.
+        .review
+          %i.icon-thumbs-up.et-rotate{"et-in" => "rotateSlideIn", "et-out" => "rotateSlideOut"} 
+          %i.icon-thumbs-down.et-rotate{"et-in" => "rotateSlideIn", "et-out" => "rotateSlideOut"} 
+    .et-page
+      .hero-unit{class: "#{@sample.source}"}
+        - if @sample
+          %h1 #{@sample.description}
+        - else
+          %h1 :( Nothing to say.
+        .review
+          %i.icon-thumbs-up.et-rotate{"et-in" => "rotateSlideIn", "et-out" => "rotateSlideOut"} 
+          %i.icon-thumbs-down.et-rotate{"et-in" => "rotateSlideIn", "et-out" => "rotateSlideOut"} 
+  
   .row-fluid
     .span12
       .add

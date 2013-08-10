@@ -17,6 +17,8 @@ $ ->
     .done (data) ->
       quote = data.new_quote_id
       $('.hero-unit').children().first().text(data.new_quote_description)
+
+
     
     
   
