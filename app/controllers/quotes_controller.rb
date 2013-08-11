@@ -56,7 +56,7 @@ class QuotesController < ApplicationController
   def rank
     quote = Quote.find(params[:id])
     new_quote = Quote.all.select{|q| q.source == quote.source && q.id != quote.id}.sample
-    
+  
     if params[:direction] == "up"
       if quote.up
         quote.up += 1
@@ -76,13 +76,14 @@ class QuotesController < ApplicationController
         format.json do
           result = {
             new_quote_id: new_quote.id,
-            new_quote_description: new_quote.description
+            new_quote_description: new_quote.description,
+            number: params[:number]
           }
           render json: result
         end
       end
     else
-      raise
+      puts "it broke it broke it broke!"
     end
       
   end

@@ -5,6 +5,6 @@ class WelcomeController < ApplicationController
     else
       @quotes = Quote.where(source: Quote::FLATTERY)
     end
-    @sample = @quotes.sample
+    @sample = [@quotes.sample,@quotes.sample]
   end
 end
