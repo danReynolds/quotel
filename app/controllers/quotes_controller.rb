@@ -12,6 +12,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @icons = ["icon-fighter-jet","icon-random","icon-plane","icon-comments", "icon-road", "icon-bullhorn"]
     @source = params[:source]
   end
 
