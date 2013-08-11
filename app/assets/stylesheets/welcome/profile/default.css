@@ -10,11 +10,7 @@ button.et-rotate {
 
 .et-wrapper {
   width: 100%;
-  height: 60%;
-}
-
-.et-page {
-  padding: 8px;
+  height: 100%;
 }
 .et-page:nth-child(1) {
 }
