@@ -8,7 +8,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1.json
   def show
   end
-
+  
   # GET /quotes/new
   def new
     @quote = Quote.new
@@ -59,17 +59,9 @@ class QuotesController < ApplicationController
     new_quote = Quote.all.select{|q| q.source == quote.source && q.id != quote.id}.sample
   
     if params[:direction] == "up"
-      if quote.up
-        quote.up += 1
-      else
-        quote.up = 1
-      end
+      quote.up += 1
     else
-      if quote.down
-        quote.down += 1
-      else
-        quote.down = 1
-      end
+      quote.down += 1
     end
     
     if quote.save
