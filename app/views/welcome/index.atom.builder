@@ -1,5 +1,5 @@
 atom_feed :language => 'en-US' do |feed|
-  feed.title "Articles"
+  feed.title "Quotel"
   feed.updated Time.now
 
   @feeds.each do |item|
@@ -9,7 +9,11 @@ atom_feed :language => 'en-US' do |feed|
       entry.title "Quote"
       entry.content item.description, :type => 'html'
       entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
-      entry.author "Anonymous"
+      if item.author
+        entry.author = item.author
+      else
+        entry.author "Anonymous"
+      end
     end
   end
 end
