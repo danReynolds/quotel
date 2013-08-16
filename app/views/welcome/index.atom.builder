@@ -9,11 +9,7 @@ atom_feed :language => 'en-US' do |feed|
       entry.title "Quote"
       entry.content item.description, :type => 'html'
       entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
-      if item.author
-        entry.author = item.author
-      else
-        entry.author "Anonymous"
-      end
+      entry.author "Anonymous"
     end
   end
 end
