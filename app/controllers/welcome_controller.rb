@@ -6,5 +6,6 @@ class WelcomeController < ApplicationController
       @quotes = Quote.where(source: Quote::FLATTERY)
     end
     @sample = [@quotes.sample,@quotes.sample]
+    @feeds = Quote.order("RANDOM()").first(20)
   end
 end
