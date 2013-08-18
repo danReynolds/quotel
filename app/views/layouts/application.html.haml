@@ -18,6 +18,8 @@
       </script>
     %main{:role => "main"}
       .container
-        .row-fluid
-          = render partial: 'layouts/navigation'
+        .container-fluid
+          .row-fluid
+            = render partial: 'layouts/navigation'
+            = render partial: 'layouts/messages'
         = yield

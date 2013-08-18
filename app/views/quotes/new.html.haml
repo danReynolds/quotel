@@ -1,3 +1,10 @@
+.container-fluid
+  - if @quote.errors.any?
+    .row-fluid
+      .span12
+        %ul{style: "margin-left: 0;"}
+          - @quote.errors.full_messages.each do |e|
+            %li.alert.alert-error{style: "list-style-type: none;"}=e
 = render partial: "#{@source}"
       
       

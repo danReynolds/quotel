@@ -1,5 +1,7 @@
 class Quote < ActiveRecord::Base
   
+  validates_presence_of :description
+  
   FLATTERY = 'flattery'
   INSULT = 'insult'
   FLATINSULT = 'flatinsult'

@@ -27,9 +27,11 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to root_url(source: @quote.source), notice: 'You just shared your words with people' }
+        format.html { redirect_to root_url(source: @quote.source), notice: 'Your words just went everywhere.' }
       else
-        format.html { render action: 'new' }
+        @source = @quote.source
+        @icons = ["icon-fighter-jet","icon-random","icon-plane","icon-comments", "icon-road", "icon-bullhorn"]
+        format.html { render action: 'new'}
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end
@@ -38,15 +40,6 @@ class QuotesController < ApplicationController
   # PATCH/PUT /quotes/1
   # PATCH/PUT /quotes/1.json
   def update
-    respond_to do |format|
-      if @quote.update(quote_params)
-        format.html { redirect_to @quote, notice: 'Quote was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
-    end
   end
   
   def view_all
