@@ -1,4 +1,4 @@
-@import "bootstrap";
+u@import "bootstrap";
 @import "font-awesome";
 body { 
   padding-top: 20px;
@@ -19,8 +19,8 @@ a:hover {
 .viewport {
   margin: 20px 20px 10px 20px;
   box-shadow: 0px 0px 3px 2px #141414;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   background: #1a1a1a;
 }
 @import "bootstrap-responsive";
