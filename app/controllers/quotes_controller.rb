@@ -50,7 +50,7 @@ class QuotesController < ApplicationController
   
   def rank
     quote = Quote.find(params[:id])
-    new_quote = Quote.all.select{|q| q.source == quote.source && q.id != quote.id}.sample
+    new_quote = Quote.where(source: quote.source).order("RANDOM()").first
   
     if params[:direction] == "up"
       quote.up += 1
