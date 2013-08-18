@@ -1,8 +1,6 @@
 .view_all {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-
+  
   .winner {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -28,7 +26,11 @@
       font-size: 50px;
     }
   }
-  hr {border-bottom: 1px solid rgba(200, 211, 210, 0.5);}
+  hr {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-bottom: 1px solid rgba(200, 211, 210, 0.5);
+  }
   
   .all_quotes {
     margin-top: 20px;
