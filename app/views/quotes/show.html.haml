@@ -1,0 +1,11 @@
+.container-fluid.show_page
+  .row-fluid
+    .span12
+      %h1
+        %i.icon-quote-left{class: "#{@quote.source}"}
+        #{@quote.description}
+        %i.icon-quote-right{class: "#{@quote.source}"}
+      - if @quote.author.present?
+        %h1= @quote.author
+      - else
+        %h1 -Anonymous
