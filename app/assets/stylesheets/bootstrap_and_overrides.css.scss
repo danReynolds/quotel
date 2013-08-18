@@ -2,7 +2,7 @@
 @import "font-awesome";
 body { 
   padding-top: 20px;
-  background-image: image-url("background.png")
+  background-image: image-url("dark_mosaic.png")
 }
 .navbar-inner {
   padding-left: 0;
@@ -20,6 +20,6 @@ a:hover {
   background-size: 100% auto;
   background-position: center center;
   display: block;
-  background: url('logo-small.png'), no-repeat;
+  background: url('quotel.png'), no-repeat;
 }
 @import "bootstrap-responsive";
