@@ -33,6 +33,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
+gem 'newrelic_rpm'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
