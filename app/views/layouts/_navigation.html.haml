@@ -8,7 +8,7 @@
     %nav.navbar-inner
       %ul.nav.navbar
         %li.flattery
-          = link_to "Flattery", "http://localhost:3000"
+          = link_to "Flattery", root_url(source: Quote::FLATTERY)
         %li.insult
           = link_to "Insult", root_url(source: Quote::INSULT)
         %li.flatinsult
