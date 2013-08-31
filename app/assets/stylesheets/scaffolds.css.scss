@@ -60,3 +60,26 @@ div {
     list-style: square;
   }
 }
+.viewport {
+  padding:0;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow:1px 1px 3px 3px #161515;
+  background: rgb(29, 29, 29);
+
+  .heading {
+    margin-top: 48px;
+  }
+  h3 {
+    color: white;
+  }
+  #quote_description {
+    width: 90%;
+    height: 120px;
+  }
+  .icons {
+    font-size: 200px;
+    text-align: center;
+    margin-top: 10%;
+  }
+}

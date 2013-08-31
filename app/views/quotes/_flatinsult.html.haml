@@ -1,18 +1,19 @@
-.container-fluid.viewport.add-quote
-  .row-fluid
-    .span6
-      %h2.heading Say something mixed.
-      %h3 Because you're the best at being awful.
-      =form_for @quote do |f|
-        =f.hidden_field :source, value: "flatinsult"
-        .row-fluid
-          .span12
-            =f.label "Flat-Insult"
-            =f.text_area :description
-            =f.label "Name (optional)"
-            =f.text_field :author
-        .row-fluid
-          .span12
-            =f.submit "Submit", class: "btn  btn-primary"
-    .span6.icons
-      %i{class: "#{@icons.sample}"}
+.container-fluid.viewport
+  .flatinsult-box
+    .row-fluid
+      .span6
+        %h2.heading Say something mixed.
+        %h3 Because you're the best at being awful.
+        =form_for @quote do |f|
+          =f.hidden_field :source, value: "flatinsult"
+          .row-fluid
+            .span12
+              =f.label "Flat-Insult"
+              =f.text_area :description
+              =f.label "Name (optional)"
+              =f.text_field :author
+          .row-fluid
+            .span12
+              =f.submit "Submit", class: "btn  btn-primary"
+      .span6.icons
+        %i{class: "#{@icons.sample}"}

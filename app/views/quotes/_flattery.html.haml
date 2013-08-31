@@ -1,18 +1,19 @@
-.container-fluid.viewport.add-quote
-  .row-fluid
-    .span6
-      %h2.heading Make someone's day.
-      %h3 No really, say something nice. We all need a boost sometimes
-      =form_for @quote do |f|
-        = f.hidden_field :source, value: "flattery"
-        .row-fluid
-          .span12
-            =f.label "Compliment"
-            =f.text_area :description
-            =f.label "Name (optional)"
-            =f.text_field :author
-        .row-fluid
-          .span12
-            =f.submit "Submit", class: "btn  btn-primary"
-    .span6.icons
-      %i{class: "#{@icons.sample}"}
+.container-fluid.viewport
+  .flattery-box
+    .row-fluid
+      .span6
+        %h2.heading Make someone's day.
+        %h3 No really, say something nice. We all need a boost sometimes
+        =form_for @quote do |f|
+          = f.hidden_field :source, value: "flattery"
+          .row-fluid
+            .span12
+              =f.label "Compliment"
+              =f.text_area :description
+              =f.label "Name (optional)"
+              =f.text_field :author
+          .row-fluid
+            .span12
+              =f.submit "Submit", class: "btn  btn-primary"
+      .span6.icons
+        %i{class: "#{@icons.sample}"}

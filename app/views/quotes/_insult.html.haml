@@ -1,18 +1,19 @@
-.container-fluid.viewport.add-quote
-  .row-fluid
-    .span6
-      %h2.heading People suck.
-      %h3 Take some time reminding them why that is.
-      =form_for @quote do |f|
-        = f.hidden_field :source, value: "insult"
-        .row-fluid
-          .span12
-            =f.label "Insult"
-            =f.text_area :description
-            =f.label "Name (optional)"
-            =f.text_field :author
-        .row-fluid
-          .span12
-            =f.submit "Submit", class: "btn  btn-primary"
-    .span6.icons
-      %i{class: "#{@icons.sample}"}
+.container-fluid.viewport
+  .insult-box
+    .row-fluid
+      .span6
+        %h2.heading People suck.
+        %h3 Take some time reminding them why that is.
+        =form_for @quote do |f|
+          = f.hidden_field :source, value: "insult"
+          .row-fluid
+            .span12
+              =f.label "Insult"
+              =f.text_area :description
+              =f.label "Name (optional)"
+              =f.text_field :author
+          .row-fluid
+            .span12
+              =f.submit "Submit", class: "btn  btn-primary"
+      .span6.icons
+        %i{class: "#{@icons.sample}"}
