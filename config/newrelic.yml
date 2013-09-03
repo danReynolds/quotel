@@ -3,9 +3,9 @@
 # Ruby, Java, .NET, PHP, and Python applications with deep visibility and low overhead.
 # For more information, visit www.newrelic.com.
 #
-# Generated August 30, 2013
+# Generated September 03, 2013
 #
-# This configuration file is custom generated for Propyl-One Tech Solutions
+# This configuration file is custom generated for Ecthelion Inc
 
 
 # Here are the settings that are common to all environments
@@ -15,7 +15,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
-  license_key: 'e04747cacff624444779f6cc06b00708ae53a8e7'
+  license_key: '5e471aa9650c8eb0c7b9bac7276e31fd56c9969a'
 
   # Agent Enabled (Ruby/Rails Only)
   # Use this setting to force the agent to run or not run.
