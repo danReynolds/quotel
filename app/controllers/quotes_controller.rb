@@ -25,9 +25,10 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
+    wits = ["It went through, but should it have?","Nice one.","I have heard better, but we'll take it.", "Classic. Submit like 10 more of those.","Hah, that one was hilarious.","Please tell me you have more of those."]
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to root_url(source: @quote.source), notice: 'Your words just went everywhere.' }
+        format.html { redirect_to root_url(source: @quote.source), notice: wits.sample }
       else
         @source = @quote.source
         @icons = ["icon-fighter-jet","icon-random","icon-plane","icon-comments", "icon-road", "icon-bullhorn"]
