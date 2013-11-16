@@ -46,7 +46,7 @@ class QuotesController < ApplicationController
   def view_all
     @all_quotes = Quote.all.order(up: :desc)
     @recent_quotes = @all_quotes.select{|q| q.created_at.to_date >= Date.today - 7.days}
-    @recent_quotes = @all_quotes unless @recent_quotes.present?
+    @recent_quotes = @all_quotes unless [@recent_quotes.select{|q| q.source == Quote::FLATTERY}.first, @recent_quotes.select{|q| q.source == Quote::INSULT}.first, @recent_quotes.select{|q| q.source == Quote::FLATINSULT}.first].present?
     @week_winners = [@recent_quotes.select{|q| q.source == Quote::FLATTERY}.first, @recent_quotes.select{|q| q.source == Quote::INSULT}.first, @recent_quotes.select{|q| q.source == Quote::FLATINSULT}.first]
   end
   
